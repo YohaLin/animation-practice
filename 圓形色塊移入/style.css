@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.btn {
+  border: 2px solid tomato;
+  background: none;
+  color: tomato;
+  padding: 20px 40px;
+  font-size: 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s;
+  position: relative;
+  color: tomato;
+  overflow: hidden;
+  color: tomato;
+}
+
+.btn:hover {
+  color: white;
+}
+
+/* 如果要改色塊展開的起點，改 l,r,t,b 的位置與圓角位置就可以囉！ */
+.btn:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: tomato;
+  z-index: -1;
+  /* 製造圓角出來 */
+  border-radius: 50% 50% 0 0;
+  height: 0%;
+  transition: all 0.5s;
+}
+
+.btn:hover:before {
+  /* 製造超過按鈕的高度，就可以填滿按鈕了 */
+  height: 190%;
+}

@@ -1,0 +1,42 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #351435;
+  font-family: sans-serif;
+  font-size: 40px;
+  border: 3px solid #351435;
+  padding: 40px 80px;
+  position: relative;
+  overflow: hidden;
+  /* 這個 transition 控制文字顏色 */
+  transition: all 1s;
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #351435;
+  /* 如果沒有加上 z-index， 會有文字消失的效果 */
+  z-index: -1;
+  transform: translateX(100%);
+  /* 這個 transition 控制色滑動 */
+  transition: all 1s;
+}
+
+a:hover:before {
+  transform: translateX(0);
+}
+
+a:hover {
+  color: white;
+}
